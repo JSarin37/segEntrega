@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="segEntrega.Vistas.vCuenta"
+             Title="Regresar">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Padding="20" RowSpacing="5">
+        <Image Source="infopersonal.jpg" Aspect="AspectFill"/>
+        <VerticalStackLayout>
+           
+
+            <Label Grid.Row="1" 
+                               Text="Tu Información" 
+                               FontAttributes="Italic,Bold" 
+                               FontSize="22" 
+                               HorizontalTextAlignment="Center"/>
+
+            <Label Grid.Row="2" 
+                           Text="Nombre:" 
+                           FontSize="16" 
+                            WidthRequest="300"
+                            HeightRequest="40"
+                            TextColor="Black"
+                            Margin="10,30,0,0"
+                           FontAttributes="Bold"/>
+
+            <Frame Grid.Row="3" 
+                           CornerRadius="50"
+                            WidthRequest="300"
+                            HeightRequest="40"
+                           BackgroundColor="White">
+                <Entry 
+                        x:Name="txtNombres"
+                        Grid.Row="3"
+                        TextColor="DarkBlue" 
+                        HeightRequest="50"/>
+            </Frame>
+
+            <Label Grid.Row="4" 
+                           Text="Apellido" 
+                           FontSize="16" 
+                            WidthRequest="300"
+                            HeightRequest="40"
+                            TextColor="Black"
+                           FontAttributes="Bold"/>
+            <Frame Grid.Row="5" 
+                           CornerRadius="50"
+                            WidthRequest="300"
+                            HeightRequest="40"
+                           BackgroundColor="White">
+                <Entry 
+                        x:Name="txtApellidos"
+                        Grid.Row="5"
+                        TextColor="DarkBlue" 
+                        HeightRequest="50"/>
+            </Frame>
+            <Label Grid.Row="6" 
+                           Text="Dirección" 
+                           FontSize="16" 
+                            WidthRequest="300"
+                            HeightRequest="40"
+                            TextColor="Black"
+                           FontAttributes="Bold"/>
+            <Frame Grid.Row="7" 
+                           CornerRadius="50"
+                            WidthRequest="300"
+                            HeightRequest="40"
+                           BackgroundColor="White">
+                <Entry 
+                        x:Name="txtDireccion"
+                        Grid.Row="7"
+                        TextColor="DarkBlue" 
+                        HeightRequest="50"/>
+            </Frame>
+            <Label Grid.Row="8" 
+                        Text="Teléfono" 
+                        FontSize="16" 
+                         WidthRequest="300"
+                         HeightRequest="40"
+                           TextColor="Black"
+                        FontAttributes="Bold"/>
+            <Frame Grid.Row="9" 
+                            CornerRadius="50"
+                             WidthRequest="300"
+                             HeightRequest="40"
+                            BackgroundColor="White">
+                <Entry 
+                         x:Name="txtTelefono"
+                         Grid.Row="9"
+                         TextColor="DarkBlue" 
+                         HeightRequest="50"/>
+
+            </Frame>
+            <Label Grid.Row="10" 
+                   Text="Email" 
+                   FontSize="16" 
+                   WidthRequest="300"
+                   HeightRequest="40"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+            <Frame Grid.Row="11" 
+				   CornerRadius="50"
+				   WidthRequest="300"
+				   HeightRequest="40"
+					BackgroundColor="White">
+                <Entry 
+					x:Name="txtEmailReg"
+					Grid.Row="11"
+			        TextColor="DarkBlue" 
+					HeightRequest="50"/>
+            </Frame>
+
+            <Button Grid.Row="10" 
+                            x:Name="btnActualizar"
+                            Text="Actualizar" 
+                            FontAttributes="Bold" 
+                            TextColor="DarkBlue"
+                            Margin="0,20" 
+                            WidthRequest="150"
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            BackgroundColor="Aquamarine"
+                                />
+
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="segEntrega.Vistas.vPromociones"
+             Title="Regresar">
+    <Grid>
+
+        <Image Source="fondopromo.png" Aspect="AspectFit"/>
+        <FlexLayout Grid.Row="0" Direction="Column">
+
+            <!-- Header -->
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="promos.png" WidthRequest="400" HeightRequest="150" Margin="10,0,0,0" />
+
+            </Grid>
+
+            <!-- Body -->
+
+
+            <!-- Content -->
+            <FlexLayout Direction="Row" FlexLayout.Grow="1">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" Source="descuento.png" WidthRequest="150" HeightRequest="100" Margin="30,30,0,0" />
+
+
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" Source="voucher.png" WidthRequest="250" HeightRequest="100" Margin="0,30,0,0" />
+
+                </Grid>
+
+            </FlexLayout>
+
+            <FlexLayout Direction="Row" FlexLayout.Grow="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" Source="descuentoesp.png" WidthRequest="250" HeightRequest="100" Margin="20,30,0,0" />
+                    <Image Grid.Row="1" Source="barradescuentos.png" WidthRequest="350" HeightRequest="100" Margin="10,30,0,0" />
+                </Grid>
+
+
+
+            </FlexLayout>
+
+        </FlexLayout>
+    </Grid>
+</ContentPage>

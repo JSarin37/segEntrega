@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="segEntrega.Vistas.vSeguimiento"
+             Title="Regresar">
+    <Grid>
+
+        <Image Source="fondoseguimiento.png" Aspect="Fill"/>
+        <FlexLayout Direction="Column">
+
+            <!-- Header -->
+
+            <Frame BackgroundColor="Transparent" BorderColor="Transparent" Margin="0,-10,0,0">
+                <Label Text="Tu pedido" HorizontalOptions="Center" FontSize="20" TextColor="DarkBlue" FontAttributes="Bold"/>
+            </Frame>
+
+            <!-- Body -->
+
+
+            <!-- Content -->
+            <FlexLayout FlexLayout.Grow="1">
+
+                <Frame WidthRequest="310" HeightRequest="150" Margin="20,-10,0,0">
+                    <Label Text="Información del pedido">
+
+                    </Label>
+                </Frame>
+
+            </FlexLayout>
+
+            <FlexLayout FlexLayout.Grow="1">
+
+                <Frame WidthRequest="310" HeightRequest="150" Margin="20,-110,0,0">
+                    <Label Text="Información del envio">
+
+                    </Label>
+                </Frame>
+
+            </FlexLayout>
+
+
+
+                <Frame WidthRequest="40" HeightRequest="40" Margin="10,-150,0,0">
+       
+                        <ImageButton Source="pantallacompleta.png" WidthRequest="30" HeightRequest="30" Clicked="ImageButton_Clicked"/>
+                </Frame>
+ 
+  
+
+            <FlexLayout FlexLayout.Grow="1">
+
+                <Frame WidthRequest="310" HeightRequest="300" Margin="20,-10,0,0">
+                    <Image Grid.Row="1" Source="googmaps.jpeg" WidthRequest="700" HeightRequest="400" Margin="10,0,0,0" />
+                </Frame>
+
+            </FlexLayout>
+
+        </FlexLayout>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="segEntrega.Vistas.vMenuPrincipal"
+             Title="Regresar">
+    <Grid>
+
+        <Image Source="fondomenu.jpg" Aspect="AspectFill"/>
+        
+        <FlexLayout Grid.Row="0" Direction="Column">
+
+            <!-- Header -->
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout x:Name="adminMenuSection" IsVisible="False" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
+                    <Button x:Name="btnMenu" Text="Menú Admin" Clicked="btnMenu_Clicked" BackgroundColor="YellowGreen" TextColor="DarkBlue" FontAttributes="Bold"/>
+                </StackLayout>
+                <Image Grid.Row="0" Grid.Column="1" Source="imagenmenu.jpeg" WidthRequest="500" HeightRequest="150" Margin="-150,0,0,0" />
+
+            </Grid>
+
+            <!-- Body -->
+
+
+            <!-- Content -->
+            <FlexLayout Direction="Row" FlexLayout.Grow="1">
+                <Frame   
+                            CornerRadius="40"
+                            WidthRequest="160"
+                            HeightRequest="250"
+                            Margin="10,10,10,0"
+                           BackgroundColor="Yellow">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Source="promociones.png" WidthRequest="80" HeightRequest="100" Margin="0,30,0,0" />
+                        <Label Grid.Row="1" Text="PROMOCIONES" VerticalOptions="Center" Margin="10,30,0,0" FontAttributes="Bold"/>
+
+                    </Grid>
+                </Frame>
+
+                <Frame     
+                            CornerRadius="40"
+                            WidthRequest="160"
+                            HeightRequest="250"
+                            Margin="10,10,10,0"
+                           BackgroundColor="LemonChiffon">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3"/>
+                    </Frame.GestureRecognizers>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Source="usuario.png" WidthRequest="100" HeightRequest="100" Margin="0,30,0,0" />
+                        <Label Grid.Row="1" Text="CUENTA" VerticalOptions="Center" Margin="30,30,0,0" FontAttributes="Bold"/>
+
+                    </Grid>
+
+                </Frame>
+
+            </FlexLayout>
+
+            <FlexLayout Direction="Row" FlexLayout.Grow="1">
+                <Frame   
+                            CornerRadius="40"
+                            WidthRequest="160"
+                            HeightRequest="250"
+                            Margin="10,10,10,0"
+                           BackgroundColor="Orange">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Source="actividad.png" WidthRequest="80" HeightRequest="100" Margin="0,30,0,0" />
+                        <Label Grid.Row="1" Text="ORDENES" VerticalOptions="Center" Margin="30,30,0,0" FontAttributes="Bold"/>
+
+                    </Grid>
+                </Frame>
+
+                <Frame CornerRadius="40"
+                            WidthRequest="160"
+                            HeightRequest="250"
+                            Margin="10,10,10,0"
+                           BackgroundColor="YellowGreen">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                    </Frame.GestureRecognizers>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Source="seguimiento.png" WidthRequest="150" HeightRequest="100" Margin="0,30,0,0" />
+                        <Label Grid.Row="1" Text="SEGUIMIENTO" VerticalOptions="Center" Margin="10,30,0,0" FontAttributes="Bold"/>
+
+                    </Grid>
+
+                </Frame>
+
+            </FlexLayout>
+
+        </FlexLayout>
+    </Grid>
+</ContentPage>

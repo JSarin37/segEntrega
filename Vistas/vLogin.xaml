@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="segEntrega.Vistas.vLogin">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid RowDefinitions="Auto,*">
+                <Image Grid.Row="0" 
+                   Source="elogin.jpg" 
+                   Aspect="Fill" 
+                   HeightRequest="310" 
+                   Margin="0,-45,0,0"/>
+                <Frame Grid.Row="1" 
+                   CornerRadius="31" 
+                   TranslationY="-23" 
+                   BackgroundColor="AliceBlue" 
+                   BorderColor="AliceBlue" 
+                   VerticalOptions="FillAndExpand"
+                   Margin="5,10">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+                      Padding="20" RowSpacing="5">
+                        <Label Grid.Row="0" 
+                               Text="La forma mas rapida y eficiente de recibir tu producto." 
+                               FontAttributes="Italic" 
+                               FontSize="22" 
+                               HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="1" 
+                               Text="¿Listo para dar el siguiente paso?" 
+                               Margin="0,0,0,18"  
+                               TextColor="#63909c" 
+                               HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="2" 
+                           Text="Email" 
+                           FontSize="16" 
+                           FontAttributes="Bold"/>
+                        <Frame Grid.Row="3" 
+                           CornerRadius="50"
+                            WidthRequest="300"
+                            HeightRequest="40"
+                           BackgroundColor="White">
+                            <Entry 
+                        x:Name="txtEmail"
+                        Grid.Row="3"
+                        TextColor="#578794" 
+                        HeightRequest="50"/>
+                        </Frame>
+                        <Label Grid.Row="4" 
+                           Text="Password" 
+                           FontSize="16" 
+                           FontAttributes="Bold"/>
+                        <Frame Grid.Row="5" 
+                           CornerRadius="50"
+                            WidthRequest="300"
+                            HeightRequest="40"
+                           BackgroundColor="White">
+                            <Entry 
+                        x:Name="txtPassword"
+                        Grid.Row="5"
+                        TextColor="AliceBlue" 
+                        HeightRequest="50"/>
+                        </Frame>
+                        <Button Grid.Row="6" 
+                            x:Name="btnMenuPrin"
+                            Text="Continue" 
+                            FontAttributes="Bold" 
+                            TextColor="White" 
+                            Margin="0,20" 
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            Clicked="btnMenuPrin_Clicked"
+                            BackgroundColor="DarkBlue"/>
+
+                        <Label Grid.Row="7" FontAttributes="Bold">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Aun no estas con nosotros? " 
+                                          TextColor="#aaaaaa"/>
+
+                                    <Span Text="Registrate"
+                                          FontSize="20"
+                                          TextColor="#63909c">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+
+                        </Label>
+                    </Grid>
+
+                </Frame>
+
+            </Grid>
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

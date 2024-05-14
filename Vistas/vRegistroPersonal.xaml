@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="segEntrega.Vistas.vRegistroPersonal"
+             Title="Regresar">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Padding="20" RowSpacing="5">
+        <Image Source="regpersonal.png" Aspect="AspectFit"/>
+        <VerticalStackLayout>
+            <Label Grid.Row="0" 
+                           Text="Registro de Personal" 
+                           Margin="0,0,0,18"  
+                   FontSize="24"
+                           TextColor="DarkBlue" 
+                           HorizontalTextAlignment="Center"/>
+            <Frame Grid.Row="2" 
+                       CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                       BackgroundColor="White">
+                <Entry 
+                    x:Name="txtNombres"
+                    Placeholder="Nombres:"
+                    Grid.Row="2"
+                    HeightRequest="50"/>
+            </Frame>
+            <Frame Grid.Row="3" 
+                       CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                   Margin="0,20,0,0"
+                       BackgroundColor="White">
+                <Entry 
+                    x:Name="txtApellidos"
+                    Grid.Row="3"
+                    Placeholder="Apellidos:"
+                    HeightRequest="50"/>
+            </Frame>
+            <Frame Grid.Row="4" 
+                       CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                   Margin="0,20,0,0"
+                       BackgroundColor="White">
+                <Entry 
+                    x:Name="txtDireccion"
+                    Grid.Row="4"
+                    Placeholder="Dirección:"
+                    HeightRequest="50"/>
+            </Frame>
+            <Frame Grid.Row="5" 
+                        CornerRadius="50"
+                         WidthRequest="300"
+                         HeightRequest="40"
+                   Margin="0,20,0,0"
+                        BackgroundColor="White">
+                <Entry 
+                     x:Name="txtTelefono"
+                     Grid.Row="5"
+                     Placeholder="Teléfono:"
+                     HeightRequest="50"/>
+
+            </Frame>
+
+            <Frame Grid.Row="6" 
+                       CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                   Margin="0,20,0,0"
+                       BackgroundColor="White">
+                <Entry 
+                    x:Name="txtVehiculo"
+                    Grid.Row="6"
+                    Placeholder="Vehiculo:"
+                    HeightRequest="50"/>
+            </Frame>
+            <Frame Grid.Row="7" 
+                       CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                   Margin="0,20,0,0"
+                       BackgroundColor="White">
+                <Entry 
+                    x:Name="txtModelo"
+                    Grid.Row="7"
+                    Placeholder="Modelo:"
+                    HeightRequest="50"/>
+            </Frame>
+            <Frame Grid.Row="8" 
+                       CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                   Margin="0,20,0,0"
+                       BackgroundColor="White">
+                <Entry 
+                    x:Name="txtColor"
+                    Grid.Row="8"
+                    Placeholder="Color:"
+                    HeightRequest="50"/>
+            </Frame>
+            <Frame Grid.Row="9" 
+                       CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                   Margin="0,20,0,0"
+                       BackgroundColor="White">
+                <Entry 
+                    x:Name="txtPlaca"
+                    Grid.Row="9"
+                    Placeholder="Placa:"
+                    HeightRequest="50"/>
+            </Frame>
+            <Frame Grid.Row="10" 
+			   CornerRadius="50"
+			   WidthRequest="300"
+			   HeightRequest="40"
+                   Margin="0,20,0,0"
+				BackgroundColor="White">
+                <Entry 
+				x:Name="txtEmailReg"
+				Grid.Row="10"
+                    Placeholder="Email:"
+				HeightRequest="50"/>
+            </Frame>
+            <Frame Grid.Row="11" 
+                       CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                   Margin="0,20,0,0"
+                       BackgroundColor="White">
+                <Entry 
+                    x:Name="txtPasswordReg"
+                    Grid.Row="11"
+                    Placeholder="Contraseña:"
+                    HeightRequest="50"/>
+            </Frame>
+            <Button Grid.Row="12" 
+                        x:Name="btnRegistro"
+                        Text="Registro" 
+                        FontAttributes="Bold" 
+                        TextColor="White" 
+                        Margin="0,20" 
+                        HeightRequest="50" 
+                        CornerRadius="10" 
+                        BackgroundColor="DarkBlue"
+                        WidthRequest="150"
+                            />
+    
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
