@@ -14,36 +14,44 @@ public partial class vCuenta : ContentPage
     public vCuenta()
     {
         InitializeComponent();
+        GetUserFromPreferences();
+        this.BindingContext = GetUserFromPreferences();
         LoadUserData();
-        
+
+
     }
 
-    private void LoadUserData()
-    {
-        // Recuperar los datos del usuario desde Preferences
-        int userCodigo = int.Parse(Preferences.Get("UserCodigo", "0"));
-        string userNombre = Preferences.Get("UserNombre", "Nombre por defecto");
-        string userApellido = Preferences.Get("UserApellido", "Apellido por defecto");
-        string userDireccion = Preferences.Get("UserDireccion", "Direccion por defecto");
-        string userTelefono = Preferences.Get("UserTelefono", "Telefono por defecto");
-        string userEmail = Preferences.Get("UserEmail", "email@default.com");
 
-        // Establecer los valores en las etiquetas
-        txtCodigo.Text = userCodigo.ToString();       
-        txtNombres.Text = userNombre;
-        txtApellidos.Text = userApellido; 
-        txtDireccion.Text = userDireccion;
-        txtTelefono.Text = userTelefono;
-        txtEmailReg.Text = userEmail;
-        
-      
-    }
 
     private async void btnActualizar_Clicked(object sender, EventArgs e)
     {
         
     }
-  
+
+    public User GetUserFromPreferences()
+    {
+        return new User
+        {
+            codigo = int.Parse(Preferences.Get("UserCodigo", "0")),
+            nombre = Preferences.Get("UserNombre", string.Empty),
+            apellido = Preferences.Get("UserApellido", string.Empty),
+            direccion = Preferences.Get("UserDireccion", string.Empty),
+            telefono = Preferences.Get("UserTelefono", string.Empty),
+            email = Preferences.Get("UserEmail", string.Empty)
+        };
+    }
+
+    private void LoadUserData()
+    {
+        User user = GetUserFromPreferences();
+        txtCodigo.Text = user.codigo.ToString();
+        txtNombres.Text = user.nombre;
+        txtApellidos.Text = user.apellido;
+        txtDireccion.Text = user.direccion;
+        txtTelefono.Text = user.telefono;
+        txtEmailReg.Text = user.email;
+    }
+
 }
 
 

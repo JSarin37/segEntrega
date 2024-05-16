@@ -1,4 +1,5 @@
 
+using segEntrega.Modelos;
 namespace segEntrega.Vistas;
 
 public partial class vMenuPrincipal : ContentPage
@@ -7,6 +8,7 @@ public partial class vMenuPrincipal : ContentPage
 	{
 		InitializeComponent();
         ConfigureAdminMenuVisibility();
+
     }
     private void ConfigureAdminMenuVisibility()
     {
@@ -37,4 +39,5 @@ public partial class vMenuPrincipal : ContentPage
     {
         await Navigation.PushModalAsync(new menuAdmin(), true);
     }
+
 }

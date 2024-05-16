@@ -41,7 +41,7 @@ public partial class vLogin : ContentPage
                     // Procesa el usuario como necesites aquí, por ejemplo, cambiar de página o actualizar la UI
                     await Application.Current.MainPage.DisplayAlert("Bienvenido", $"{user.nombre}", "OK");
                     Navigation.PushAsync(new Vistas.vMenuPrincipal());
-
+                    Preferences.Set("UserNombre", user.nombre);
                     Preferences.Set("UserApellido", user.apellido);
                     Preferences.Set("UserDireccion", user.direccion);
                     Preferences.Set("UserTelefono", user.telefono);
