@@ -17,12 +17,18 @@ public partial class menuAdmin : ContentPage
 
     private async void btnregPer_Clicked(object sender, EventArgs e)
     {
-
+        var button = sender as Button;
+        string option = button.Text;
+        await DisplayAlert("Ha seleccionado", option, "OK");
+        await Navigation.PopModalAsync();
     }
 
     private async void btnlistaUsu_Clicked(object sender, EventArgs e)
     {
-
+        var button = sender as Button;
+        string option = button.Text;
+        await DisplayAlert("Ha seleccionado", option, "OK");
+        await Navigation.PopModalAsync();
     }
 
     private async void btnCancelar_Clicked(object sender, EventArgs e)
@@ -32,6 +38,9 @@ public partial class menuAdmin : ContentPage
 
     private async void btnlistaPedidos_Clicked(object sender, EventArgs e)
     {
-
+        var button = sender as Button;
+        string option = button.Text;
+        await DisplayAlert("Ha seleccionado", option, "OK");
+        await Navigation.PopModalAsync();
     }
 }

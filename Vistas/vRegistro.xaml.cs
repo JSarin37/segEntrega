@@ -24,7 +24,7 @@ public partial class vRegistro : ContentPage
             };
 
                 var content = new FormUrlEncodedContent(values);
-                var response = await client.PostAsync("http://172.28.80.1/segentrega/post_usu.php?action=add", content);
+                var response = await client.PostAsync("http://10.0.2.2/segentrega/usuario/post.php?action=add", content);
 
                 if (response.IsSuccessStatusCode)
                 {

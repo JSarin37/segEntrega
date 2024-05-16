@@ -6,15 +6,24 @@
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Padding="20" RowSpacing="5">
         <Image Source="infopersonal.jpg" Aspect="AspectFill"/>
         <VerticalStackLayout>
-           
 
-            <Label Grid.Row="1" 
-                               Text="Tu Información" 
-                               FontAttributes="Italic,Bold" 
-                               FontSize="22" 
-                               HorizontalTextAlignment="Center"/>
 
-            <Label Grid.Row="2" 
+            <Label Grid.Row="1" Text="Tu Información" FontAttributes="Italic,Bold" FontSize="22" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="2" Text="Codigo:" FontSize="16" WidthRequest="300" HeightRequest="40" TextColor="Black" Margin="10,30,0,0" FontAttributes="Bold"/>
+
+            <Frame Grid.Row="3" 
+                           CornerRadius="50"
+                            WidthRequest="300"
+                            HeightRequest="40"
+                           BackgroundColor="White">
+                <Entry 
+                        x:Name="txtCodigo"
+                        Grid.Row="3"
+                        TextColor="DarkBlue" 
+                        HeightRequest="50"/>
+            </Frame>
+
+            <Label Grid.Row="4" 
                            Text="Nombre:" 
                            FontSize="16" 
                             WidthRequest="300"
@@ -23,7 +32,7 @@
                             Margin="10,30,0,0"
                            FontAttributes="Bold"/>
 
-            <Frame Grid.Row="3" 
+            <Frame Grid.Row="5" 
                            CornerRadius="50"
                             WidthRequest="300"
                             HeightRequest="40"
@@ -35,26 +44,8 @@
                         HeightRequest="50"/>
             </Frame>
 
-            <Label Grid.Row="4" 
-                           Text="Apellido" 
-                           FontSize="16" 
-                            WidthRequest="300"
-                            HeightRequest="40"
-                            TextColor="Black"
-                           FontAttributes="Bold"/>
-            <Frame Grid.Row="5" 
-                           CornerRadius="50"
-                            WidthRequest="300"
-                            HeightRequest="40"
-                           BackgroundColor="White">
-                <Entry 
-                        x:Name="txtApellidos"
-                        Grid.Row="5"
-                        TextColor="DarkBlue" 
-                        HeightRequest="50"/>
-            </Frame>
             <Label Grid.Row="6" 
-                           Text="Dirección" 
+                           Text="Apellido" 
                            FontSize="16" 
                             WidthRequest="300"
                             HeightRequest="40"
@@ -66,19 +57,37 @@
                             HeightRequest="40"
                            BackgroundColor="White">
                 <Entry 
+                        x:Name="txtApellidos"
+                        Grid.Row="5"
+                        TextColor="DarkBlue" 
+                        HeightRequest="50"/>
+            </Frame>
+            <Label Grid.Row="8" 
+                           Text="Dirección" 
+                           FontSize="16" 
+                            WidthRequest="300"
+                            HeightRequest="40"
+                            TextColor="Black"
+                           FontAttributes="Bold"/>
+            <Frame Grid.Row="9" 
+                           CornerRadius="50"
+                            WidthRequest="300"
+                            HeightRequest="40"
+                           BackgroundColor="White">
+                <Entry 
                         x:Name="txtDireccion"
                         Grid.Row="7"
                         TextColor="DarkBlue" 
                         HeightRequest="50"/>
             </Frame>
-            <Label Grid.Row="8" 
+            <Label Grid.Row="10" 
                         Text="Teléfono" 
                         FontSize="16" 
                          WidthRequest="300"
                          HeightRequest="40"
                            TextColor="Black"
                         FontAttributes="Bold"/>
-            <Frame Grid.Row="9" 
+            <Frame Grid.Row="11" 
                             CornerRadius="50"
                              WidthRequest="300"
                              HeightRequest="40"
@@ -90,14 +99,14 @@
                          HeightRequest="50"/>
 
             </Frame>
-            <Label Grid.Row="10" 
+            <Label Grid.Row="12" 
                    Text="Email" 
                    FontSize="16" 
                    WidthRequest="300"
                    HeightRequest="40"
                    TextColor="Black"
                    FontAttributes="Bold"/>
-            <Frame Grid.Row="11" 
+            <Frame Grid.Row="113" 
 				   CornerRadius="50"
 				   WidthRequest="300"
 				   HeightRequest="40"
@@ -109,7 +118,7 @@
 					HeightRequest="50"/>
             </Frame>
 
-            <Button Grid.Row="10" 
+            <Button Grid.Row="14" 
                             x:Name="btnActualizar"
                             Text="Actualizar" 
                             FontAttributes="Bold" 
@@ -119,6 +128,7 @@
                             HeightRequest="50" 
                             CornerRadius="10" 
                             BackgroundColor="Aquamarine"
+                    Clicked="btnActualizar_Clicked"
                                 />
 
         </VerticalStackLayout>

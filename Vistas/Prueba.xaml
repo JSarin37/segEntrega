@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="segEntrega.Vistas.Prueba"
+             Title="Prueba">
+    <StackLayout Padding="10">
+        <Label Text="Código" />
+        <Entry x:Name="codigoEntry" IsReadOnly="True" />
+
+        <Label Text="Nombre" />
+        <Entry x:Name="nombreEntry" IsReadOnly="True" />
+
+        <Label Text="Apellido" />
+        <Entry x:Name="apellidoEntry" IsReadOnly="True" />
+
+        <Label Text="Dirección" />
+        <Entry x:Name="direccionEntry" IsReadOnly="True" />
+
+        <Label Text="Teléfono" />
+        <Entry x:Name="telefonoEntry" IsReadOnly="True" />
+
+        <Label Text="Email" />
+        <Entry x:Name="emailEntry" IsReadOnly="True" />
+
+        <Label Text="Contraseña" />
+        <Entry x:Name="contrasenaEntry" IsReadOnly="True" IsPassword="True" />
+
+        <Label Text="Rol" />
+        <Entry x:Name="rolEntry" IsReadOnly="True" />
+
+        <!-- Otros controles de la vista -->
+    </StackLayout>
+</ContentPage>

@@ -1,14 +1,16 @@
 using Newtonsoft.Json;
 using segEntrega.Modelos;
+using Microsoft.Maui.Storage;
+using System.Diagnostics;
 
 namespace segEntrega.Vistas;
 
 public partial class vLogin : ContentPage
 {
-	public vLogin()
-	{
-		InitializeComponent();
-	}
+    public vLogin()
+    {
+        InitializeComponent();
+    }
 
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
@@ -17,47 +19,48 @@ public partial class vLogin : ContentPage
 
     private async void btnMenuPrin_Clicked(object sender, EventArgs e)
     {
-        try
-    {
         using (var client = new HttpClient())
         {
             var values = new Dictionary<string, string>
-            {
-                { "email", txtEmail.Text },
-                { "password", txtPassword.Text }
-            };
+        {
+            { "email", txtEmail.Text },
+            { "contrasena", txtPassword.Text }
+        };
 
             var content = new FormUrlEncodedContent(values);
-            var response = await client.PostAsync("http://172.28.80.1/segentrega/login.php", content);
+            var response = await client.PostAsync("http://192.168.0.105/segentrega/login.php", content);
 
-            if (response.IsSuccessStatusCode)
+            try
             {
-                    var responseString = await response.Content.ReadAsStringAsync();
-                    var user = JsonConvert.DeserializeObject<User>(responseString);
+                var responseString = await response.Content.ReadAsStringAsync();
+                var user = JsonConvert.DeserializeObject<User>(responseString);
+                Console.WriteLine($"Usuario deserializado: {JsonConvert.SerializeObject(user)}");
 
-                    // Guardar los datos del usuario usando Preferences
-                    Preferences.Set("UserId", user.codigo.ToString());
-                    Preferences.Set("UserNombre", user.nombre);
+                if (user != null && user.codigo != 0)
+                {
+                    // Procesa el usuario como necesites aquí, por ejemplo, cambiar de página o actualizar la UI
+                    await Application.Current.MainPage.DisplayAlert("Bienvenido", $"{user.nombre}", "OK");
+                    Navigation.PushAsync(new Vistas.vMenuPrincipal());
+
                     Preferences.Set("UserApellido", user.apellido);
                     Preferences.Set("UserDireccion", user.direccion);
                     Preferences.Set("UserTelefono", user.telefono);
                     Preferences.Set("UserEmail", user.email);
                     Preferences.Set("UserContrasena", user.contrasena);
                     Preferences.Set("UserRol", user.rol);
+
                     await Navigation.PushAsync(new Vistas.vMenuPrincipal());
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Datos del usuario no válidos. JSON recibido: " + responseString, "OK");
+                }
             }
-            else
+            catch (JsonException ex)
             {
-                await DisplayAlert("Error", "Email o contraseña incorrectos.", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", "Error al procesar la respuesta del servidor: " + ex.Message, "OK");
             }
         }
     }
-    catch (Exception ex)
-    {
-        await DisplayAlert("Error", "Un error ocurrió: " + ex.Message, "Cerrar");
-    }
-        
-        
-    }
-
+    
 }
