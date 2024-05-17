@@ -28,7 +28,7 @@ public partial class vLogin : ContentPage
         };
 
             var content = new FormUrlEncodedContent(values);
-            var response = await client.PostAsync("http://192.168.0.105/segentrega/login.php", content);
+            var response = await client.PostAsync("http://10.0.2.2/segentrega/login.php", content);
 
             try
             {
@@ -40,7 +40,8 @@ public partial class vLogin : ContentPage
                 {
                     // Procesa el usuario como necesites aquí, por ejemplo, cambiar de página o actualizar la UI
                     await Application.Current.MainPage.DisplayAlert("Bienvenido", $"{user.nombre}", "OK");
-                    Navigation.PushAsync(new Vistas.vMenuPrincipal());
+                    
+                    Preferences.Set("UserCodigo", user.codigo.ToString());
                     Preferences.Set("UserNombre", user.nombre);
                     Preferences.Set("UserApellido", user.apellido);
                     Preferences.Set("UserDireccion", user.direccion);
@@ -55,6 +56,7 @@ public partial class vLogin : ContentPage
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "Datos del usuario no válidos. JSON recibido: " + responseString, "OK");
                 }
+
             }
             catch (JsonException ex)
             {
