@@ -1,14 +1,20 @@
 namespace segEntrega.Vistas;
 
-public partial class vRegistro : ContentPage
+public partial class vAgregarUsuario : ContentPage
 {
-	public vRegistro()
+	public vAgregarUsuario()
 	{
 		InitializeComponent();
 	}
 
+    private async void btnRegresar_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new vListaUsuarios(), true);
+    }
+
     private async void btnRegistro_Clicked(object sender, EventArgs e)
     {
+
         try
         {
             using (var client = new HttpClient())
@@ -36,13 +42,13 @@ public partial class vRegistro : ContentPage
                     await DisplayAlert("Error", "No se pudo agregar el usuario.", "Cerrar");
                 }
             }
-            await Navigation.PushAsync(new Vistas.vLogin());
+            await Navigation.PushModalAsync(new vListaUsuarios(), true);
 
         }
         catch (Exception ex)
         {
             await DisplayAlert("Alerta", ex.Message, "Cerrar");
         }
-        
+
     }
 }

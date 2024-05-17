@@ -1,37 +1,24 @@
-using System.Collections.ObjectModel;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Microsoft.Maui.Controls;
-using segEntrega.Modelos;
-using System.Net;
-using segEntrega.Vistas;
-
 namespace segEntrega.Vistas;
+using segEntrega.Modelos;
+using segEntrega.Vistas;
+using System.Net;
 
-public partial class vCuenta : ContentPage
+public partial class vActEliminUsuarios : ContentPage
 {
-
-    public vCuenta(User datos)
-    {
-        InitializeComponent();
-        GetUserFromPreferences();
-        this.BindingContext = GetUserFromPreferences();
-        LoadUserData();
+	public vActEliminUsuarios(User datos)
+	{
+		InitializeComponent();
         txtCodigo.Text = datos.codigo.ToString();
         txtNombres.Text = datos.nombre.ToString();
         txtApellidos.Text = datos.apellido.ToString();
         txtDireccion.Text = datos.direccion.ToString();
         txtTelefono.Text = datos.telefono.ToString();
         txtEmailReg.Text = datos.email.ToString();
-
-
     }
-
 
     private async void btnActualizar_Clicked(object sender, EventArgs e)
     {
+
         try
         {
             WebClient cliente = new WebClient();
@@ -77,35 +64,40 @@ public partial class vCuenta : ContentPage
         }
     }
 
-
-    public User GetUserFromPreferences()
+    private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
-        return new User
+        var answer = await DisplayAlert("Confirmar", "¿Estás seguro de que deseas eliminar este usuario?", "Sí", "No");
+        if (answer)
         {
-            codigo = int.Parse(Preferences.Get("UserCodigo", "0")),
-            nombre = Preferences.Get("UserNombre", string.Empty),
-            apellido = Preferences.Get("UserApellido", string.Empty),
-            direccion = Preferences.Get("UserDireccion", string.Empty),
-            telefono = Preferences.Get("UserTelefono", string.Empty),
-            email = Preferences.Get("UserEmail", string.Empty)
-        };
-    }
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var requestUri = $"http://10.0.2.2/segentrega/usuario/post.php?codigo={txtCodigo.Text}";
+                    var response = await client.DeleteAsync(requestUri);
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-    private void LoadUserData()
-    {
-        User user = GetUserFromPreferences();
-        txtCodigo.Text = user.codigo.ToString();
-        txtNombres.Text = user.nombre;
-        txtApellidos.Text = user.apellido;
-        txtDireccion.Text = user.direccion;
-        txtTelefono.Text = user.telefono;
-        txtEmailReg.Text = user.email;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await DisplayAlert("Éxito", "Usuario eliminado correctamente.", "OK");
+                    }
+                    else
+                    {
+                        // Muestra el contenido de la respuesta en caso de error
+                        await DisplayAlert("Error", "No se pudo eliminar el usuario: " + responseContent, "Cerrar");
+                    }
+                }
+                await Navigation.PushModalAsync(new vListaUsuarios(), true);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Alerta", ex.Message, "Cerrar");
+            }
+        }
     }
 
     private async void btnRegresar_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new vMenuPrincipal(), true);
+        await Navigation.PushModalAsync(new vListaUsuarios(), true);
     }
 }
-
-

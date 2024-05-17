@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="segEntrega.Vistas.vListaUsuarios"
+             Title="vListaUsuarios">
+    <StackLayout Padding="20" BackgroundColor="AliceBlue">
+        <Image Source="tomadatos.jpg" WidthRequest="500" HeightRequest="150" />
+        <Label 
+            Text="Lista de Usuarios"
+            FontSize="20"
+            HorizontalTextAlignment="Center" Margin="0,0,0,20"/>
+
+        <Grid>
+            
+            <ListView x:Name="listaUsuarios" ItemSelected="listaUsuarios_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="COD" TextColor="DarkBlue" FontAttributes="Bold" FontSize="12" Margin="0,0,0,10"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="NOMBRE" TextColor="DarkBlue" FontAttributes="Bold" FontSize="12" Margin="10,0,0,10"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="APELLIDO" TextColor="DarkBlue" FontAttributes="Bold" FontSize="12" Margin="10,0,0,10"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="DIRECCIÓN" TextColor="DarkBlue" FontAttributes="Bold" FontSize="12" Margin="10,0,0,10"/>
+                                <Label Grid.Row="0" Grid.Column="4" Text="TELÉFONO" TextColor="DarkBlue" FontAttributes="Bold" FontSize="12" Margin="10,0,0,10"/>
+                                <Label Grid.Row="0" Grid.Column="5" Text="EMAIL" TextColor="DarkBlue" FontAttributes="Bold" FontSize="12" Margin="10,0,0,10"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" x:Name="lblCodigo" Text="{Binding codigo}" HorizontalOptions="Center" TextColor="Green"/>
+                                <Label Grid.Row="1" Grid.Column="1" x:Name="lblNombre2" Text="{Binding nombre}" HorizontalOptions="Center" TextColor="Green"/>
+                                <Label Grid.Row="1" Grid.Column="2" x:Name="lblApellido" Text="{Binding apellido}" HorizontalOptions="Center" TextColor="Green"/>
+                                <Label Grid.Row="1" Grid.Column="3" x:Name="lblDireccion" Text="{Binding direccion}" HorizontalOptions="Center" TextColor="Green"/>
+                                <Label Grid.Row="1" Grid.Column="4" x:Name="lblTelefono" Text="{Binding telefono}" HorizontalOptions="Center" TextColor="Green" FontSize="10"/>
+                                <Label Grid.Row="1" Grid.Column="5" x:Name="lblEmail" Text="{Binding email}" HorizontalOptions="Center" TextColor="Green" FontSize="10"/>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </Grid>
+        <Button         x:Name="btnIngreso"
+                        Text="Agregar Usuario" 
+                        FontAttributes="Bold" 
+                        TextColor="White" 
+                        Margin="0,20" 
+                        HeightRequest="50" 
+                        CornerRadius="10" 
+                        BackgroundColor="DarkBlue"
+                        WidthRequest="150"
+                        Clicked="btnIngreso_Clicked"/>
+        <Button             x:Name="btnRegresar"
+                            Text="Regresar" 
+                            FontAttributes="Bold" 
+                            TextColor="White"
+                            Margin="10,20,0,0" 
+                            WidthRequest="150"
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            BackgroundColor="DarkBlue"
+                            Clicked="btnRegresar_Clicked"/>
+    </StackLayout>
+</ContentPage>

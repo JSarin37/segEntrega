@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="segEntrega.Vistas.vCuenta"
-             Title="Regresar">
+             x:Class="segEntrega.Vistas.vActEliminUsuarios"
+             Title="vActEliminUsuarios">
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Padding="20" RowSpacing="5">
         <Image Source="infopersonal.jpg" Aspect="AspectFill"/>
         <VerticalStackLayout>
 
 
-            <Label Grid.Row="1" Text="Tu Información" FontAttributes="Italic,Bold" FontSize="22" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="1" Text="DATOS DEL USUARIO" FontAttributes="Italic,Bold" FontSize="22" HorizontalTextAlignment="Center"/>
             <Label Grid.Row="2" Text="Codigo:" FontSize="16" WidthRequest="300" HeightRequest="40" TextColor="Black" Margin="10,30,0,0" FontAttributes="Bold"/>
 
             <Frame Grid.Row="3" 
@@ -117,22 +117,36 @@
 			        TextColor="DarkBlue" 
 					HeightRequest="50"/>
             </Frame>
-
-            <Button Grid.Row="14" 
+            
+            
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto">
+    
+            <Button Grid.Row="0" Grid.Column="0"
                             x:Name="btnActualizar"
                             Text="Actualizar" 
                             FontAttributes="Bold" 
                             TextColor="DarkBlue"
-                            Margin="0,20" 
+                            Margin="20,50,10,0" 
                             WidthRequest="150"
                             HeightRequest="50" 
                             CornerRadius="10" 
                             BackgroundColor="Aquamarine"
-                    Clicked="btnActualizar_Clicked"
-                    
-                                />
+                    Clicked="btnActualizar_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="1" 
+                            x:Name="btnEliminar"
+                            Text="Eliminar" 
+                            FontAttributes="Bold" 
+                            TextColor="DarkBlue"
+                            Margin="10,50,0,0" 
+                            WidthRequest="150"
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            BackgroundColor="Aquamarine"
+                    Clicked="btnEliminar_Clicked"/>
+            </Grid>
 
-            <Button         x:Name="btnRegresar"
+            <Button Grid.Row="0" Grid.Column="1" 
+                            x:Name="btnRegresar"
                             Text="Regresar" 
                             FontAttributes="Bold" 
                             TextColor="DarkBlue"

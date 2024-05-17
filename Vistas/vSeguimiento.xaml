@@ -56,6 +56,16 @@
             </FlexLayout>
 
         </FlexLayout>
+        <Button         x:Name="btnRegresar"
+                            Text="Regresar" 
+                            FontAttributes="Bold" 
+                            TextColor="DarkBlue"
+                            Margin="10,20,0,0" 
+                            WidthRequest="150"
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            BackgroundColor="Aquamarine"
+                        Clicked="btnRegresar_Clicked"/>
     </Grid>
 
 </ContentPage>

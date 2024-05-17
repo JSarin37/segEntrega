@@ -1,5 +1,6 @@
 
 using segEntrega.Modelos;
+using segEntrega.Vistas;
 namespace segEntrega.Vistas;
 
 public partial class vMenuPrincipal : ContentPage
@@ -15,24 +16,27 @@ public partial class vMenuPrincipal : ContentPage
         string userRole = Preferences.Get("UserRol", string.Empty);
         adminMenuSection.IsVisible = userRole == "admin";
     }
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        Navigation.PushAsync(new Vistas.vPromociones());
+        await Navigation.PushModalAsync(new vPromociones(), true);
     }
 
-    private void TapGestureRecognizer_Tapped_3(object sender, TappedEventArgs e)
+    public async void TapGestureRecognizer_Tapped_3(object sender, TappedEventArgs e)
     {
-        Navigation.PushAsync(new Vistas.vCuenta());
+        var user = UserDataHelper.GetUserFromPreferences();
+      
+        await Navigation.PushModalAsync(new vCuenta(user), true);
     }
 
-    private void TapGestureRecognizer_Tapped_1(object sender, TappedEventArgs e)
+    private async void TapGestureRecognizer_Tapped_1(object sender, TappedEventArgs e)
     {
-        Navigation.PushAsync(new Vistas.vEntregas());
+        
+        await Navigation.PushModalAsync(new vEntregas(), true);
     }
 
-    private void TapGestureRecognizer_Tapped_2(object sender, TappedEventArgs e)
+    private async void TapGestureRecognizer_Tapped_2(object sender, TappedEventArgs e)
     {
-        Navigation.PushAsync(new Vistas.vSeguimiento());
+        await Navigation.PushModalAsync(new vSeguimiento(), true);
     }
 
     private async void btnMenu_Clicked(object sender, EventArgs e)
