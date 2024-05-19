@@ -51,7 +51,7 @@ public partial class vActEliminUsuarios : ContentPage
 
                 await DisplayAlert("Éxito", "Datos actualizados correctamente", "OK");
                 var user = UserDataHelper.GetUserFromPreferences();
-                await Navigation.PushAsync(new Vistas.vCuenta(user));
+                await Navigation.PushModalAsync(new NavigationPage(new vCuenta(user)), true);
             }
             else
             {

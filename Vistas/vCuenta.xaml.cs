@@ -64,7 +64,8 @@ public partial class vCuenta : ContentPage
 
                 await DisplayAlert("Éxito", "Datos actualizados correctamente", "OK");
                 var user = UserDataHelper.GetUserFromPreferences();
-                await Navigation.PushAsync(new Vistas.vCuenta(user));
+                await Navigation.PushModalAsync(new NavigationPage(new vCuenta(user)), true);
+                
             }
             else
             {
@@ -104,8 +105,8 @@ public partial class vCuenta : ContentPage
 
     private async void btnRegresar_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new vMenuPrincipal(), true);
+        await Navigation.PushModalAsync(new NavigationPage(new vMenuPrincipal()), true);
     }
 }
 
-
+ 

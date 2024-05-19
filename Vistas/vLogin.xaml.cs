@@ -54,7 +54,7 @@ public partial class vLogin : ContentPage
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Datos del usuario no válidos. JSON recibido: " + responseString, "OK");
+                    await Application.Current.MainPage.DisplayAlert("Error", "Datos del usuario no válidos", "OK");
                 }
 
             }

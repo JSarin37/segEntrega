@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="segEntrega.Vistas.vRegistro">
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Padding="20" RowSpacing="5">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" >
         <Image Source="tomadatos.jpg" Aspect="AspectFill"/>
         <VerticalStackLayout>
             <Label Grid.Row="0" 
@@ -16,115 +16,115 @@
                                FontAttributes="Italic,Bold" 
                                FontSize="22" 
                                HorizontalTextAlignment="Center"/>
-
-            <Label Grid.Row="2" 
-                           Text="Nombres" 
-                           FontSize="16" 
-                            WidthRequest="300"
-                            HeightRequest="40"
-                            TextColor="Black"
-                            Margin="10,30,0,0"
-                           FontAttributes="Bold"/>
+            <Image x:Name="Imagen" WidthRequest="150" HeightRequest="150"/>
+            <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto">
+                
+            
+            <Button x:Name="btnTomarFotografia"
+                Grid.Row="0" Grid.Column="0"
+                Text="Tomar Fotografía"
+                    FontAttributes="Bold" 
+                            TextColor="White" 
+                            Margin="30,10,0,0" 
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            BackgroundColor="DarkBlue"
+                            WidthRequest="150"
+                    Clicked="btnTomarFotografia_Clicked"/>
+                
+                <Button x:Name="btnSeleccionar"
+                    Grid.Row="0" Grid.Column="1"
+                Text="Seleccionar Fotografía" 
+                    FontAttributes="Bold" 
+                            TextColor="White" 
+                            Margin="20,10,0,0" 
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            BackgroundColor="DarkBlue"
+                            WidthRequest="150"
+                        Clicked="btnSeleccionar_Clicked"/>
+            </Grid>
 
             <Frame Grid.Row="3" 
+                   Margin="0,10,0,0"
                            CornerRadius="50"
                             WidthRequest="300"
                             HeightRequest="40"
                            BackgroundColor="White">
                 <Entry 
                         x:Name="txtNombreReg"
+                    Placeholder="Nombre:"
                         Grid.Row="3"
                         TextColor="DarkBlue" 
                         HeightRequest="50"/>
             </Frame>
 
-            <Label Grid.Row="4" 
-                           Text="Apellidos" 
-                           FontSize="16" 
-                            WidthRequest="300"
-                            HeightRequest="40"
-                            TextColor="Black"
-                           FontAttributes="Bold"/>
             <Frame Grid.Row="5" 
+                   Margin="0,10,0,0"
                            CornerRadius="50"
                             WidthRequest="300"
                             HeightRequest="40"
                            BackgroundColor="White">
                 <Entry 
                         x:Name="txtApellidoReg"
+                    Placeholder="Apellido:"
                         Grid.Row="5"
                         TextColor="DarkBlue" 
                         HeightRequest="50"/>
             </Frame>
-            <Label Grid.Row="6" 
-                           Text="Dirección" 
-                           FontSize="16" 
-                            WidthRequest="300"
-                            HeightRequest="40"
-                            TextColor="Black"
-                           FontAttributes="Bold"/>
+
             <Frame Grid.Row="7" 
+                   Margin="0,10,0,0"
                            CornerRadius="50"
                             WidthRequest="300"
                             HeightRequest="40"
                            BackgroundColor="White">
                 <Entry 
                         x:Name="txtDireccionReg"
+                    Placeholder="Dirección:"
                         Grid.Row="7"
                         TextColor="DarkBlue" 
                         HeightRequest="50"/>
             </Frame>
-            <Label Grid.Row="8" 
-                        Text="Teléfono" 
-                        FontSize="16" 
-                         WidthRequest="300"
-                         HeightRequest="40"
-                           TextColor="Black"
-                        FontAttributes="Bold"/>
+
             <Frame Grid.Row="9" 
+                   Margin="0,10,0,0"
                             CornerRadius="50"
                              WidthRequest="300"
                              HeightRequest="40"
                             BackgroundColor="White">
                 <Entry 
                          x:Name="txtTelefonoReg"
+                    Placeholder="Teléfono:"
                          Grid.Row="9"
                          TextColor="DarkBlue" 
                          HeightRequest="50"/>
 
             </Frame>
-            <Label Grid.Row="10" 
-                   Text="Email" 
-                   FontSize="16" 
-                   WidthRequest="300"
-                   HeightRequest="40"
-                   TextColor="Black"
-                   FontAttributes="Bold"/>
+
             <Frame Grid.Row="11" 
+                   Margin="0,10,0,0"
 				   CornerRadius="50"
 				   WidthRequest="300"
 				   HeightRequest="40"
 					BackgroundColor="White">
                 <Entry 
 					x:Name="txtEmailReg"
+                    Placeholder="Email:"
 					Grid.Row="11"
 			        TextColor="DarkBlue" 
 					HeightRequest="50"/>
             </Frame>
-            <Label Grid.Row="12" 
-                   Text="Password" 
-                   FontSize="16" 
-                   WidthRequest="300"
-                   HeightRequest="40"
-                   TextColor="Black"
-                   FontAttributes="Bold"/>
+
             <Frame Grid.Row="13" 
+                   Margin="0,10,0,0"
                            CornerRadius="50"
                             WidthRequest="300"
                             HeightRequest="40"
                            BackgroundColor="White">
                 <Entry 
                         x:Name="txtPasswordReg"
+                    Placeholder="Contraseña_"
                         Grid.Row="13"
                         TextColor="DarkBlue" 
                         HeightRequest="50"/>

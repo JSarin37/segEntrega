@@ -1,4 +1,5 @@
-﻿namespace segEntrega
+﻿using segEntrega.Vistas;
+namespace segEntrega
 {
     public partial class App : Application
     {
@@ -6,7 +7,7 @@
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Vistas.vLogin());
+            MainPage = new NavigationPage(new vLogin());
         }
     }
 }

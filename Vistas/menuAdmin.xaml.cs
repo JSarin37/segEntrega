@@ -23,10 +23,8 @@ public partial class menuAdmin : ContentPage
 
     private async void btnlistaUsu_Clicked(object sender, EventArgs e)
     {
-        var button = sender as Button;
-        string option = button.Text;
-        await DisplayAlert("Ha seleccionado", option, "OK");
-        await Navigation.PushModalAsync(new vListaUsuarios(), true);
+        await Navigation.PushModalAsync(new NavigationPage(new vListaUsuarios()), true);
+        
     }
 
     private async void btnCancelar_Clicked(object sender, EventArgs e)

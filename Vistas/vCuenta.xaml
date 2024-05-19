@@ -8,8 +8,8 @@
         <VerticalStackLayout>
 
 
-            <Label Grid.Row="1" Text="Tu Información" FontAttributes="Italic,Bold" FontSize="22" HorizontalTextAlignment="Center"/>
-            <Label Grid.Row="2" Text="Codigo:" FontSize="16" WidthRequest="300" HeightRequest="40" TextColor="Black" Margin="10,30,0,0" FontAttributes="Bold"/>
+            <Label Grid.Row="1" Text="Tu Información" FontAttributes="Italic,Bold" FontSize="22" HorizontalTextAlignment="Center" Margin="0,-20,0,0"/>
+            <Label Grid.Row="2" Text="Codigo:" FontSize="16" WidthRequest="300" HeightRequest="40" TextColor="Black" Margin="10,10,0,0" FontAttributes="Bold"/>
 
             <Frame Grid.Row="3" 
                            CornerRadius="50"
@@ -136,7 +136,7 @@
                             Text="Regresar" 
                             FontAttributes="Bold" 
                             TextColor="DarkBlue"
-                            Margin="10,20,0,0" 
+                            Margin="10,0,0,0" 
                             WidthRequest="150"
                             HeightRequest="50" 
                             CornerRadius="10" 
