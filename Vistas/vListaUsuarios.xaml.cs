@@ -34,14 +34,14 @@ public partial class vListaUsuarios : ContentPage
         catch (Exception ex)
         {
             Console.WriteLine($"Error al obtener datos: {ex.Message}");
-            // Considera mostrar un mensaje al usuario aquí
+            
         }
     }
 
      private async void listaUsuarios_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         var objetousuario = (segEntrega.Modelos.User)e.SelectedItem;
-        //Navigation.PushAsync(new Vistas.vCuenta(objetousuario));
+        
         await Navigation.PushModalAsync(new vActEliminUsuarios(objetousuario), true);
     }
 

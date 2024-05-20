@@ -38,7 +38,7 @@ public partial class vLogin : ContentPage
 
                 if (user != null && user.codigo != 0)
                 {
-                    // Procesa el usuario como necesites aquí, por ejemplo, cambiar de página o actualizar la UI
+                    
                     await Application.Current.MainPage.DisplayAlert("Bienvenido", $"{user.nombre}", "OK");
                     
                     Preferences.Set("UserCodigo", user.codigo.ToString());

@@ -50,9 +50,8 @@ public partial class vCuenta : ContentPage
             byte[] respuesta = cliente.UploadValues(url, "PUT", parametros);
             string respuestaString = System.Text.Encoding.UTF8.GetString(respuesta);
 
-            // Aquí deberías analizar respuestaString para asegurarte de que la actualización fue exitosa
-            // Simularemos que la respuesta fue exitosa para seguir con el ejemplo
-            if (true) // Reemplaza `true` con la condición real basada en la respuesta del servidor
+
+            if (true) 
             {
                 // Actualizar las Preferences
                 Preferences.Set("UserCodigo", txtCodigo.Text);
